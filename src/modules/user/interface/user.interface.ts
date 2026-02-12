@@ -1,12 +1,12 @@
-export class IAdmin {
+export class IUser {
     id: string
     username: string
     email: string
     password: string
-    role: AdminRole
+    role: UserRole
 }
 
-export enum AdminRole {
+export enum UserRole {
     SUPERADMIN = 'superadmin',
     ADMIN = 'admin'
 }

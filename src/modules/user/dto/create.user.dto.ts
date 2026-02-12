@@ -1,8 +1,8 @@
 import { IsEmail, IsEnum, IsNotEmpty, MinLength } from "class-validator";
-import { AdminRole } from "../interface/admin.interface";
+import { UserRole } from "../interface/user.interface";
 
 
-export class CreateAdminDto{
+export class CreateUserDto{
     @IsNotEmpty()
     @MinLength(5)
     username: string
@@ -15,6 +15,6 @@ export class CreateAdminDto{
     @MinLength(8, { message: 'Password minimal 8 karakter'})
     password: string
 
-    @IsEnum(AdminRole)
-    role: AdminRole
+    @IsEnum(UserRole)
+    role: UserRole
 }
