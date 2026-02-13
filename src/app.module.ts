@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/database.config';
 import { CategoryModule } from './modules/category/category.module';
 import { AuthModule } from './auth/auth.module';
+import { ItemModule } from './modules/item/item.module';
 
 @Module({
   imports: [ ConfigModule.forRoot({
@@ -21,7 +22,8 @@ import { AuthModule } from './auth/auth.module';
     }),
     UserModule,
     CategoryModule,
-    AuthModule],
+    AuthModule,
+    ItemModule],
   controllers: [AppController],
   providers: [AppService],
 })

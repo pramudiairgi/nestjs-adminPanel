@@ -21,7 +21,10 @@ export class CategoryService {
   }
 
   async findOne(id: string): Promise<Category | null> {
-    return await this.CategoryRepository.findOne({ where: { id } })
+    return await this.CategoryRepository.findOne({ 
+      where: { id },
+      relations: ['items']
+   })
   }
 
   async update(category: Category, updateCategoryDto: UpdateCategoryDto): Promise<Category> {
