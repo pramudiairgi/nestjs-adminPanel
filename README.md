@@ -3,7 +3,6 @@
 </p>
 
 <p align="center">
-  <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
   <h1 align="center">Web Admin Panel - Inventory System</h1>
 </p>
 
