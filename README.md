@@ -2,6 +2,63 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
+<p align="center">
+  <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
+  <h1 align="center">Web Admin Panel - Inventory System</h1>
+</p>
+
+## 👤 Identitas Mahasiswa
+* **Nama:** Irgi Pramudia
+* **Program Studi:** Teknik Informatika
+* **Instansi:** Universitas Semarang (USM)
+
+## 📝 Description Project
+
+Proyek ini adalah sistem Backend API untuk manajemen inventaris barang yang dirancang menggunakan framework NestJS. Fokus utama pengembangan ini adalah mengelola hubungan data relasional antara Category dan Item menggunakan skema One-to-Many, di mana setiap kategori dapat menaungi berbagai item produk secara terorganisir.
+
+Aplikasi ini mengimplementasikan keamanan tingkat lanjut dengan JWT (JSON Web Token) untuk memastikan bahwa operasi sensitif seperti pembuatan, pembaruan, dan penghapusan data hanya dapat dilakukan oleh pengguna yang terautentikasi.
+
+## 🔄 Technical Workflow
+
+ Alur kerja aplikasi mengikuti pola Modular & Layered Architecture dengan urutan sebagai berikut:
+
+ Request Layer: Client mengirim data melalui Postman (misal: Menambah Item baru) dengan menyertakan JWT di Header.
+
+ Security Layer: AuthGuard memverifikasi token. Jika valid, request diteruskan ke Controller.
+
+ Validation Layer: CreateItemDto memeriksa apakah tipe data sudah sesuai (misal: stock harus number dan tidak boleh negatif).
+
+ Business Logic Layer: ItemService mencari keberadaan Category berdasarkan categoryId. Jika kategori tidak ditemukan, sistem melempar NotFoundException.
+
+ Persistence Layer: Data yang sudah valid disimpan ke database MySQL melalui TypeORM Repository.
+
+ Migration Layer: Perubahan struktur tabel dicatat secara historis melalui file migrasi untuk menjaga integritas database di masa depan.
+
+## 🛠️ Fitur Utama & Keunggulan
+
+Secure Authentication: Registrasi dan login dengan enkripsi password menggunakan teknologi JWT.
+
+Relational Integrity: Penggunaan Foreign Key yang memastikan setiap item wajib memiliki kategori yang valid.
+
+Modular Design: Kode terorganisir per fitur (Module), memudahkan pemeliharaan dan skalabilitas aplikasi.
+
+Database Versioning: Implementasi Migrations untuk sinkronisasi skema database antar lingkungan pengembangan.
+
+## 📸 Bukti Fungsionalitas Aplikasi
+
+| 1. Login & JWT Auth | 2. Create Item (Relasi) |
+| :---: | :---: |
+| ![Login](./asset/Auth-login-jwt.png) | ![Create](./asset/CreateItemRelasi.png) |
+| *Sukses mendapatkan Token* | *Input categoryId valid* |
+
+| 3. Struktur Database | 4. Get All Category |
+| :---: | :---: |
+| ![DB](./asset/DBstrukture.png) | ![Get](./asset/GetAllCategory.png) |
+| *Tabel hasil migrasi* | *Response data kategori* |
+
+> **Catatan:** Sistem juga menangani error akses tanpa token (401 Unauthorized).
+> ![Unauthorized](./asset/Unauthorized.png)
+
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
