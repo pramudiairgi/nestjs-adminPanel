@@ -48,16 +48,16 @@ Database Versioning: Implementasi Migrations untuk sinkronisasi skema database a
 
 | 1. Login & JWT Auth | 2. Create Item (Relasi) |
 | :---: | :---: |
-| ![Login](./asset/Auth-login-jwt.png) | ![Create](./asset/CreateItemRelasi.png) |
+| ![Login](./src/asset/Auth-login-jwt.png) | ![Create](./src/asset/CreateItemRelasi.png) |
 | *Sukses mendapatkan Token* | *Input categoryId valid* |
 
 | 3. Struktur Database | 4. Get All Category |
 | :---: | :---: |
-| ![DB](./asset/DBstrukture.png) | ![Get](./asset/GetAllCategory.png) |
+| ![DB](./src/asset/DBstrukture.png) | ![Get](./src/asset/GetAllCategory.png) |
 | *Tabel hasil migrasi* | *Response data kategori* |
 
 > **Catatan:** Sistem juga menangani error akses tanpa token (401 Unauthorized).
-> ![Unauthorized](./asset/Unauthorized.png)
+> ![Unauthorized](./src/asset/Unauthorized.png)
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
